@@ -1,0 +1,51 @@
+<!-- Contact -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Welcome {{user.username}}</h2>
+                <h3 class="section-subheading text-normal" style=" font-style:normal; color:white;">Here you can Create and manage all your published blogs!</h3>
+
+
+            </div>
+
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="section-heading" style="font-size:25px;">Account Information</h2>
+                    </div>
+                </div>
+
+
+                <p class="section-heading">
+                    <br>Registered Username : {{ user.username }}<br />
+                    Registered ID : {{ user.id }}<br>
+                </p>
+            </div>
+            <div class="col-lg-12">
+
+                <h2 class="section-heading">Your Blogs</h2>
+
+
+                <ol class="section-heading" style="font-size:20px;">
+                    {{#each blog}}
+                        <li>
+
+                            <a href="/show/{{this.blog_id}}">{{this.blog_title}}
+                            </a>
+                        </li>
+                    {{/each}}
+                </ol>
+
+                <div class="col-lg-12 text-center">
+                   
+
+                    <a href="/createNewBlog"><button  style="background-color:grey; border:0;" class="btn btn-primary btn-xl text-uppercase" type="submit">Create Blog</button>
+                        </a></div>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>

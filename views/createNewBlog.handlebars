@@ -1,0 +1,55 @@
+ <!-- Contact -->
+ <section id="contact">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-12 text-center">
+                 <h2 class="section-heading text-uppercase">Let's Start</h2>
+                 <h3 class="section-subheading text-muted">Fill up details below to create a blog.</h3>
+             </div>
+         </div>
+         {{#if errorMsg }}
+             <p>{{{errorMsg}}}</p>
+         {{/if}}
+         <div class="row">
+             <div class="col-lg-12">
+                 <form action="/add" method="post" novalidate="novalidate">
+                     <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
+
+                                 <input class="form-control" type="text" id="blog_title" name="blog_title" placeholder="Blog Title *" required="required" data-validation-required-message="Please enter your blog Title." value="{{this.blog_title}}" />
+                             </div>
+                             <div class="form-group">
+
+                                 <p class="help-block text-danger"></p>
+                                 <input class="form-control" type="text" id="author_name" name="author_name" placeholder="Author Name *" required="required" data-validation-required-message="Please enter your Name." value="{{this.author_name}}" />
+                             </div>
+                             <div class="form-group">
+
+                                 <p class="help-block text-danger"></p>
+                                 <input class="form-control" type="date" id="blog_publish_date" name="blog_publish_date" placeholder="Publish date *" required="required" data-validation-required-message="Please enter valid publish date." value="{{this.blog_publish_date}}" />
+                                 <p class="help-block text-danger"></p>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <textarea class="form-control" rows="5" cols="50" id="blog_description" name="blog_description" placeholder="Blog Description *" required="required" data-validation-required-message="Please enter description about blog." value="{{this.blog_description}}"></textarea>
+                             <br />
+                         </div>
+                         <input type="file" id="blog_image" style="color:white; " name="blog_image" placeholder="Your Name *" required="required" data-validation-required-message="Please enter valid publish date." value="{{this.blog_image}}" accept="image/*" />
+                         <p class="help-block text-danger"></p>
+
+                     </div>
+
+
+                     <p class="help-block text-danger"></p>
+
+                     <div class="col-lg-12 text-center">
+                         <div id="success"></div>
+                         <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Create Blog</button>
+                     </div>
+                 </form>
+             </div>
+         </div>
+     </div>
+
+ </section>
